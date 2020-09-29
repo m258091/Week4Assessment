@@ -9,10 +9,11 @@
 <body>
 <h1>Temperature Converter</h1>
 <form action="getTemperatureServlet" method="post"> 
-Enter the temperature to convert as Integer:  
-<input type="text" name="userTemperature" size="5"> 
-<input type="submit" name="celsius" value="Convert to Celsius" /> 
-<input type="submit" name="fahrenheit" value="Convert To Fahrenheit" />
+Select the type of temperature conversion: 
+<br />
+<br />
+<a href="convertToCelsius.jsp">Convert to Celsius</a> &nbsp;
+<a href="convertToFahrenheit.jsp">Convert to Fahrenheit</a> 
 </form> 
 </body>
 </html>

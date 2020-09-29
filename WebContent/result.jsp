@@ -8,10 +8,11 @@
 <title>Results</title>
 </head>
 <body>
-<h1>Temperature Converter</h1>
+<h1>Temperature Conversion Result</h1>
 <p>${userTemperature.getTemperature()} ${userTemperature.getTemperatureType()} 
 = ${userTemperature.getConvertedTemperature()} ${userTemperature.getConvertedTemperatureType()}<br />
 </p>
-<a href="index.jsp">Select another temperature to convert</a>
+<a href="convertToCelsius.jsp">Convert to Celsius</a> &nbsp;
+<a href="convertToFahrenheit.jsp">Convert to Fahrenheit</a> 
 </body>
 </html>

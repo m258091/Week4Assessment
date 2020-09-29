@@ -12,19 +12,20 @@ import javax.servlet.http.HttpServletResponse;
 import model.TemperatureConverter;
 
 /**
- * Servlet implementation class getTemperatureServlet
+ * Servlet implementation class convertTemperatureServlet
  */
-@WebServlet("/getTemperatureServlet")
-public class getTemperatureServlet extends HttpServlet {
+@WebServlet("/convertToFahrenheitServlet")
+public class covertToFahrenheitServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public getTemperatureServlet() {
+    public covertToFahrenheitServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -32,21 +33,17 @@ public class getTemperatureServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String userTemperature = request.getParameter("userTemperature");
 		
-		TemperatureConverter userTemp = new TemperatureConverter();
-		if (request.getParameter("celsius") != null) {
-			userTemp = new TemperatureConverter(Integer.valueOf(userTemperature), "Fahrenheit");
-			request.setAttribute("userTemperature", userTemp);
-		} else if (request.getParameter("fahrenheit") != null) {
-			userTemp = new TemperatureConverter(Integer.valueOf(userTemperature), "Celsius");
-			request.setAttribute("userTemperature", userTemp);
-		}	
+		TemperatureConverter userTemp = new TemperatureConverter();			
+		userTemp = new TemperatureConverter(Integer.valueOf(userTemperature), "Celsius");
+		request.setAttribute("userTemperature", userTemp);	
 		
 		getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
+		
 		
 		PrintWriter writer = response.getWriter();
 		writer.println(userTemp.toString());
 		writer.close();
-
-	}
+		
+		}
 
 }

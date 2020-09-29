@@ -19,6 +19,12 @@ public class TemperatureConverter {
 		temperatureType = tempType;
 		convertTemperature(temperature, temperatureType);
 	}
+	
+	public TemperatureConverter(String tempType) {
+		super();
+		temperatureType = tempType;
+		convertTemperature(temperature, temperatureType);
+	}
 
 	public int getTemperature() {
 		return temperature;
